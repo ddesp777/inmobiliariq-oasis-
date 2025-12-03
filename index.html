@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inmobiliaria Oasis - Encuentra el hogar de tus sueños</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Aplicar la fuente Inter y ajustar estilos base */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Fondo azul claro suave */
+        }
+        /* Estilo para las tarjetas de propiedad */
+        .property-card {
+            transition: all 0.3s ease;
+        }
+        .property-card:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <!-- Navegación Fija y Responsiva -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto p-4 flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold text-indigo-700">Inmobiliaria Oasis</h1>
+            
+            <!-- Botón de menú para móvil -->
+            <button id="menu-button" class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition duration-150">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+
+            <!-- Menú de navegación (oculto en móvil por defecto) -->
+            <nav id="menu-links" class="hidden md:flex space-x-6 items-center">
+                <a href="#inicio" class="text-gray-600 hover:text-indigo-700 font-semibold transition duration-150">Inicio</a>
+                <a href="#propiedades" class="text-gray-600 hover:text-indigo-700 font-semibold transition duration-150">Propiedades</a>
+                <a href="#nosotros" class="text-gray-600 hover:text-indigo-700 font-semibold transition duration-150">Nosotros</a>
+                <a href="#contacto" class="text-white bg-indigo-600 hover:bg-indigo-700 px-5 py-2 rounded-lg font-bold transition duration-150 shadow-md">Contacto</a>
+            </nav>
+        </div>
+        
+        <!-- Menú desplegable para móvil (inicialmente oculto) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <nav class="flex flex-col p-4 space-y-2">
+                <a href="#inicio" class="block p-2 text-gray-700 hover:bg-indigo-50 rounded-lg">Inicio</a>
+                <a href="#propiedades" class="block p-2 text-gray-700 hover:bg-indigo-50 rounded-lg">Propiedades</a>
+                <a href="#nosotros" class="block p-2 text-gray-700 hover:bg-indigo-50 rounded-lg">Nosotros</a>
+                <a href="#contacto" class="block p-2 text-white bg-indigo-600 rounded-lg text-center font-bold">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container mx-auto px-4 py-8">
+
+        <!-- Sección de Héroe (Inicio) y Búsqueda -->
+        <section id="inicio" class="text-center py-16 md:py-24 bg-indigo-500 text-white rounded-3xl shadow-2xl mb-12">
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-4">
+                El Lugar Perfecto Te Espera
+            </h2>
+            <p class="text-xl md:text-2xl opacity-90 mb-10 max-w-3xl mx-auto">
+                Descubre miles de propiedades en venta y alquiler en tu zona. Tu nuevo hogar está a solo un clic.
+            </p>
+            
+            <!-- Barra de Búsqueda Simulada -->
+            <div class="max-w-xl mx-auto p-4 bg-white rounded-xl shadow-lg flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3">
+                <input type="text" placeholder="Ciudad, Barrio o Código Postal" class="flex-grow p-3 border border-gray-200 rounded-lg text-gray-800 focus:ring-indigo-500 focus:border-indigo-500">
+                <select class="p-3 border border-gray-200 rounded-lg text-gray-800">
+                    <option>Comprar</option>
+                    <option>Alquilar</option>
+                </select>
+                <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition duration-200">
+                    Buscar
+                </button>
+            </div>
+
+        </section>
+
+        <!-- Sección de Propiedades Destacadas -->
+        <section id="propiedades" class="py-12 md:py-16">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">Propiedades Destacadas</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tarjeta de Propiedad 1: Casa Familiar -->
+                <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <img src="https://placehold.co/600x400/10b981/ffffff?text=CASA+FAMILIAR" 
+                         alt="Casa familiar moderna" 
+                         class="w-full h-48 object-cover"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/10b981/ffffff?text=CASA+FAMILIAR';" />
+                    <div class="p-5">
+                        <h3 class="text-2xl font-bold text-indigo-700 mb-2">$350.000</h3>
+                        <p class="text-lg font-semibold text-gray-900 mb-2">Hermosa Casa en Zona Residencial</p>
+                        <p class="text-sm text-gray-600 mb-4">4 Dormitorios, 3 Baños | 180 m²</p>
+                        <div class="flex justify-between items-center text-gray-500 text-sm">
+                            <span class="flex items-center space-x-1">
+                                <!-- Icono de Dormitorio (Lucide: Bed) -->
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.5 20.5v-1c0-2.206-1.794-4-4-4h-9c-2.206 0-4 1.794-4 4v1m0 2h17a1 1 0 001-1v-1c0-2.76-2.24-5-5-5H7c-2.76 0-5 2.24-5 5v1a1 1 0 001 1zM7 7a2 2 0 100 4 2 2 0 000-4z"></path></svg>
+                                <span>4</span>
+                            </span>
+                            <span class="flex items-center space-x-1">
+                                <!-- Icono de Baño (Lucide: Bathtub) -->
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 009-9H3a9 9 0 009 9zM12 3v18M3 12h18"></path></svg>
+                                <span>3</span>
+                            </span>
+                            <span class="flex items-center space-x-1">
+                                <!-- Icono de Área (Lucide: Measure) -->
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 8v8m-4-4h8"></path></svg>
+                                <span>180m²</span>
+                            </span>
+                        </div>
+                        <a href="#" class="mt-4 block text-center bg-indigo-100 text-indigo-700 py-2 rounded-lg font-semibold hover:bg-indigo-200 transition duration-150">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Propiedad 2: Apartamento Céntrico -->
+                <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <img src="https://placehold.co/600x400/fcd34d/92400e?text=APARTAMENTO+CENTRO" 
+                         alt="Apartamento moderno en el centro" 
+                         class="w-full h-48 object-cover"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/fcd34d/92400e?text=APARTAMENTO+CENTRO';" />
+                    <div class="p-5">
+                        <h3 class="text-2xl font-bold text-indigo-700 mb-2">$185.000</h3>
+                        <p class="text-lg font-semibold text-gray-900 mb-2">Apartamento con Vistas a la Ciudad</p>
+                        <p class="text-sm text-gray-600 mb-4">2 Dormitorios, 1 Baño | 75 m²</p>
+                        <div class="flex justify-between items-center text-gray-500 text-sm">
+                            <span class="flex items-center space-x-1">
+                                <!-- Icono de Dormitorio (Lucide: Bed) -->
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.5 20.5v-1c0-2.206-1.794-4-4-4h-9c-2.206 0-4 1.794-4 4v1m0 2h17a1 1 0 001-1v-1c0-2.76-2.24-5-5-5H7c-2.76 0-5 2.24-5 5v1a1 1 0 001 1zM7 7a2 2 0 100 4 2 2 0 000-4z"></path></svg>
+                                <span>2</span>
+                            </span>
+                            <span class="flex items-center space-x-1">
+                                <!-- Icono de Baño (Lucide: Bathtub) -->
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 009-9H3a9 9 0 009 9zM12 3v18M3 12h18"></path></svg>
+                                <span>1</span>
+                            </span>
+                            <span class="flex items-center space-x-1">
+                                <!-- Icono de Área (Lucide: Measure) -->
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 8v8m-4-4h8"></path></svg>
+                                <span>75m²</span>
+                            </span>
+                        </div>
+                        <a href="#" class="mt-4 block text-center bg-indigo-100 text-indigo-700 py-2 rounded-lg font-semibold hover:bg-indigo-200 transition duration-150">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Propiedad 3: Terreno -->
+                <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <img src="https://placehold.co/600x400/60a5fa/ffffff?text=TERRENO+PARA+CONSTRUIR" 
+                         alt="Terreno urbanizable" 
+                         class="w-full h-48 object-cover"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/60a5fa/ffffff?text=TERRENO+PARA+CONSTRUIR';" />
+                    <div class="p-5">
+                        <h3 class="text-2xl font-bold text-indigo-700 mb-2">$85.000</h3>
+                        <p class="text-lg font-semibold text-gray-900 mb-2">Terreno Urbanizable con Vistas</p>
+                        <p class="text-sm text-gray-600 mb-4">Ideal para construir tu proyecto | 500 m²</p>
+                        <div class="flex justify-between items-center text-gray-500 text-sm">
+                            <span class="flex items-center space-x-1">
+                                <!-- Icono de Casa (Lucide: Home) -->
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6"></path></svg>
+                                <span>0</span>
+                            </span>
+                            <span class="flex items-center space-x-1">
+                                <!-- Icono de Baño (Lucide: Bathtub) -->
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 009-9H3a9 9 0 009 9zM12 3v18M3 12h18"></path></svg>
+                                <span>0</span>
+                            </span>
+                            <span class="flex items-center space-x-1">
+                                <!-- Icono de Área (Lucide: Measure) -->
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 8v8m-4-4h8"></path></svg>
+                                <span>500m²</span>
+                            </span>
+                        </div>
+                        <a href="#" class="mt-4 block text-center bg-indigo-100 text-indigo-700 py-2 rounded-lg font-semibold hover:bg-indigo-200 transition duration-150">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white text-lg font-semibold px-8 py-3 rounded-full shadow-lg transform hover:scale-105 transition duration-300">
+                    Ver Todas las Propiedades
+                </a>
+            </div>
+        </section>
+        
+        <!-- Sección Acerca de Nosotros -->
+        <section id="nosotros" class="py-12 md:py-16 bg-white rounded-xl shadow-lg p-6 md:p-12 mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4 border-b-2 border-indigo-500 pb-2 inline-block">Nuestra Historia</h2>
+                    <p class="text-gray-600 mb-4">
+                        En Inmobiliaria Oasis, llevamos más de 15 años conectando personas con el hogar de sus sueños. Nuestra misión es simple: ofrecer un servicio transparente, honesto y personalizado que haga del proceso de compra, venta o alquiler una experiencia placentera.
+                    </p>
+                    <p class="text-gray-600">
+                        Contamos con un equipo de expertos locales que conocen el mercado al detalle, asegurando que tomes la mejor decisión. Confía en la experiencia, confía en Oasis.
+                    </p>
+                    <ul class="mt-6 space-y-2 text-gray-700">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Asesoramiento legal completo
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Valoraciones gratuitas y sin compromiso
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-indigo-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Amplia cartera de propiedades exclusivas
+                        </li>
+                    </ul>
+                </div>
+                <!-- Placeholder de Imagen de Oficina o Equipo -->
+                <div class="hidden md:block">
+                    <img src="https://placehold.co/600x400/312e81/ffffff?text=EQUIPO+PROFESIONAL" 
+                         alt="Imagen del equipo profesional de la inmobiliaria" 
+                         class="rounded-xl shadow-xl w-full h-auto"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x400/312e81/ffffff?text=EQUIPO+PROFESIONAL';" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto (Formulario simple) -->
+        <section id="contacto" class="py-12 md:py-16">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">¿Listo para comenzar? Contáctanos.</h2>
+            
+            <form id="contact-form" class="max-w-xl mx-auto space-y-4 bg-white p-8 rounded-xl shadow-lg border-t-4 border-indigo-600">
+                <div>
+                    <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="Tu Nombre Completo" required>
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="tu.email@ejemplo.com" required>
+                </div>
+                <div>
+                    <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-1">Dinos qué buscas (Comprar, Vender, Alquilar)</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" placeholder="Ejemplo: Quiero comprar un apartamento de 2 dormitorios en la zona centro..." required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-10 rounded-lg shadow-xl transition duration-200 transform hover:scale-105">
+                        Enviar Consulta
+                    </button>
+                </div>
+                <div id="form-message" class="mt-4 text-center hidden p-3 rounded-lg font-semibold"></div>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="bg-gray-900 text-white mt-12">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+                <!-- Columna 1: Logo y Slogan -->
+                <div>
+                    <h4 class="text-xl font-extrabold text-indigo-400 mb-3">Oasis</h4>
+                    <p class="text-sm text-gray-400">Tu socio de confianza en bienes raíces.</p>
+                </div>
+                <!-- Columna 2: Enlaces Rápidos -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-3 border-b border-indigo-500 inline-block">Enlaces</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#propiedades" class="hover:text-indigo-400 transition">Propiedades</a></li>
+                        <li><a href="#nosotros" class="hover:text-indigo-400 transition">Acerca de</a></li>
+                        <li><a href="#contacto" class="hover:text-indigo-400 transition">Contacto</a></li>
+                    </ul>
+                </div>
+                <!-- Columna 3: Información de Contacto -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-3 border-b border-indigo-500 inline-block">Detalles</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>(555) 123-4567</li>
+                        <li>info@inmobiliaria-oasis.com</li>
+                        <li>Calle Falsa 123, Ciudad</li>
+                    </ul>
+                </div>
+                <!-- Columna 4: Redes Sociales -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-3 border-b border-indigo-500 inline-block">Síguenos</h4>
+                    <div class="flex justify-center md:justify-start space-x-3">
+                        <a href="#" class="text-gray-400 hover:text-indigo-400 transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><!-- Icono de Facebook --><path d="M12 2C6.477 2 2 6.477 2 12c0 4.237 2.636 7.854 6.315 9.17c.46-.08.665-.213.665-.46 0-.227-.008-.838-.013-1.644-2.56.54-3.69-.955-3.69-.955-.417-1.057-1.02-1.335-1.02-1.335-.837-.57.06-.558.06-.558.93.064 1.417.95 1.417.95.824 1.41 2.158 1.004 2.684.767.084-.597.323-1.004.588-1.234-2.046-.234-4.195-1.023-4.195-4.555 0-1.006.357-1.83.94-2.474-.094-.234-.406-1.17.09-2.44 0 0 .766-.246 2.505.945.727-.2.150-.395 1.503-.398 1.503 0 .777.202 1.49.398 1.503.203.945-.09 2.44.09 2.44.583.644.94 1.468.94 2.474 0 3.541-2.153 4.316-4.198 4.545.33.284.66.865.66 1.745 0 1.235-.01 2.227-.01 2.52 0 .248.196.54.665.46C18.364 19.854 21 16.237 21 12c0-5.523-4.477-10-10-10z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-indigo-400 transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><!-- Icono de Instagram --><path d="M12 2.163c3.204 0 3.584.012 4.851.071 1.171.055 1.8.24 2.224.402.483.189.84.444 1.233.837.393.393.648.75.837 1.233.162.424.347 1.053.402 2.224.06 1.267.071 1.647.071 4.851s-.012 3.584-.071 4.851c-.055 1.171-.24 1.8-.402 2.224-.189.483-.444.84-.837 1.233-.393.393-.75.648-1.233.837-.424.162-1.053.347-2.224.402-1.267.06-1.647.071-4.851.071s-3.584-.012-4.851-.071c-1.171-.055-1.8-.24-2.224-.402-.483-.189-.84-.444-1.233-.837-.393-.393-.648-.75-.837-1.233-.162-.424-.347-1.053-.402-2.224-.06-1.267-.071-1.647-.071-4.851s.012-3.584.071-4.851c.055-1.171.24-1.8.402-2.224.189-.483.444-.84.837-1.233.393-.393.75-.648 1.233-.837.424-.162 1.053-.347 2.224-.402 1.267-.06 1.647-.071 4.851-.071zm0 2.163c-3.267 0-3.693.014-4.981.072-1.293.06-2.102.253-2.852.541-.749.289-1.348.69-1.942 1.285-.595.594-.996 1.194-1.285 1.942-.288.75-.481 1.559-.541 2.852-.058 1.288-.072 1.714-.072 4.981s.014 3.693.072 4.981c.06 1.293.253 2.102.541 2.852.289.749.69 1.348 1.285 1.942.594.595 1.194.996 1.942 1.285.75.288 1.559.481 2.852.541 1.288.058 1.714.072 4.981.072s3.693-.014 4.981-.072c1.293-.06 2.102-.253 2.852-.541.749-.289 1.348-.69 1.942-1.285.595-.594 1.194-.996 1.942-1.285.75-.288 1.559-.481 2.852-.541-1.288-.058-1.714-.072-4.981-.072zm0 3.633c-4.49 0-8.125 3.635-8.125 8.125s3.635 8.125 8.125 8.125 8.125-3.635 8.125-8.125-3.635-8.125-8.125-8.125zm0 13.633c-3.037 0-5.508-2.471-5.508-5.508s2.471-5.508 5.508-5.508 5.508 2.471 5.508 5.508-2.471 5.508-5.508 5.508zm6.5-12.274c-.672 0-1.217.545-1.217 1.217s.545 1.217 1.217 1.217 1.217-.545 1.217-1.217c0-.672-.545-1.217-1.217-1.217z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-indigo-400 transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><!-- Icono de Twitter/X --><path d="M22.46 6c-.77.34-1.6.58-2.47.69.89-.53 1.57-1.37 1.89-2.37-.83.49-1.76.85-2.75 1.04-.78-.83-1.89-1.34-3.13-1.34-2.37 0-4.3 1.93-4.3 4.3 0 .34.04.67.11.99-3.57-.18-6.74-1.89-8.86-4.49-.37.63-.58 1.36-.58 2.14 0 1.49.76 2.81 1.91 3.59-.7-.02-1.36-.21-1.94-.53v.05c0 2.08 1.48 3.82 3.44 4.22-.36.1-.73.15-1.12.15-.27 0-.53-.02-.78-.07.54 1.7 2.12 2.94 3.99 2.98-1.48 1.16-3.35 1.86-5.39 1.86-.35 0-.69-.02-1.03-.06 1.92 1.23 4.19 1.94 6.64 1.94 8 0 12.38-6.66 12.38-12.38 0-.19-.01-.39-.01-.58.85-.61 1.58-1.36 2.16-2.22z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-800 py-3 text-center text-sm text-gray-500">
+            <p>&copy; 2024 Inmobiliaria Oasis. Desarrollado con ❤️ y Tailwind CSS.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para la funcionalidad (Menú Móvil y Formulario) -->
+    <script>
+        // Funcionalidad del menú de hamburguesa
+        document.getElementById('menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Manejo del formulario (solo simulación)
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const formMessage = document.getElementById('form-message');
+            
+            // Simular el envío exitoso
+            formMessage.textContent = '¡Mensaje enviado! Un agente Oasis se comunicará contigo pronto.';
+            formMessage.classList.remove('hidden', 'bg-red-100', 'text-red-700');
+            formMessage.classList.add('bg-green-100', 'text-green-700');
+            
+            // Resetear el formulario después de un breve retraso
+            setTimeout(() => {
+                document.getElementById('contact-form').reset();
+                formMessage.classList.add('hidden');
+            }, 3000);
+        });
+
+        // Funcionalidad para cerrar el menú móvil al hacer clic en un enlace
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
